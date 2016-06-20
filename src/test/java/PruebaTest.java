@@ -10,6 +10,6 @@ import static org.junit.Assert.*;
 public class PruebaTest {
     @Test public void testSomeLibraryMethod() {
         Prueba classUnderTest = new Prueba();
-        assertTrue("someLibraryMethod should return 'true'", classUnderTest.someLibraryMethod());
+        assertFalse("someLibraryMethod should return 'true'", classUnderTest.someLibraryMethod());
     }
 }
