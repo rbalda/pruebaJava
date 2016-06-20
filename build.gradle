@@ -10,11 +10,13 @@
 // Apply the java plugin to add support for Java
 
 plugins {
+    id 'net.saliman.cobertura' version '2.3.1'
     id 'com.github.kt3k.coveralls' version '2.6.3'
 } 
 
 apply plugin: 'java'
-apply plugin: 'jacoco'
+apply plugin: 'net.saliman.cobertura'
+apply plugin: 'com.github.kt3k.coveralls'
 
 
 // In this section you declare where to find the dependencies of your project
@@ -36,10 +38,8 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
+//coveralls {
+//    sourceDirs = files(subprojects.sourceSets.main.allSource.srcDirs).files.absolutePath
+//}
 
-jacocoTestReport {
-    reports {
-        xml.enabled = true // coveralls plugin depends on xml format report
-        html.enabled = true
-    }
-}
+cobertura.coverageFormats = ['xml'] 

@@ -2,4 +2,4 @@ language: java
 java:
   -oraclejdk8
 after_success:
-  -./gradlew jacocoTestReport coveralls
+  -./gradlew cobertura coveralls
